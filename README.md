@@ -1,6 +1,6 @@
 <!-- # Aubrey Falconer 🚀 -->
 
-[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=aubreyf&count_private=true&include_all_commits=true&show_icons=true&theme=github_dark&hide=prs)](https://github.com/anuraghazra/github-readme-stats)
+[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=aubreyf&count_private=true&include_all_commits=true&show_icons=true&theme=github_dark)](https://github.com/anuraghazra/github-readme-stats)
 
 <!-- [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=aubreyf&theme=github_dark&count_private=true&include_all_commits=true)](https://github.com/anuraghazra/github-readme-stats) -->
 
