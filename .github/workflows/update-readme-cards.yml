@@ -37,7 +37,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: username=${{ github.repository_owner }}&theme=github_dark
+          options: username=${{ github.repository_owner }}&theme=github_dark&hide=php&exclude_repo=app-engine-rmd,ati-server,auto-light-probes,poloniexlendingbot,PostProcessing,unity3d-marsxplr
           path: profile/top-langs.svg
           token: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
           fail_on_error: true
