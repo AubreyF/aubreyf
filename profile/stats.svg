@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Aubrey Falconer&#39;s GitHub Stats, Rank: A-</title>
-        <desc id="descId">Total Stars Earned: 24, Total Commits  : 3279, Total PRs: 2135, Total Issues: 161, Contributed to (last year): 7</desc>
+        <desc id="descId">Total Stars Earned: 24, Total Commits  : 3290, Total PRs: 2149, Total Issues: 161, Contributed to (last year): 7</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 64.65308699235402;
+        stroke-dashoffset: 64.62030957079367;
       }
     }
   
