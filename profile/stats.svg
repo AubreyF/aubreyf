@@ -1,15 +1,15 @@
 
       <svg
-        width="467"
+        width="339.5666646957397"
         height="220"
-        viewBox="0 0 467 220"
+        viewBox="0 0 339.5666646957397 220"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
         aria-labelledby="descId"
       >
         <title id="titleId">Aubrey Falconer&#39;s GitHub Stats, Rank: A-</title>
-        <desc id="descId">Total Stars Earned: 24, All-time Contributions: 16532, Public Commits  : 3319, Total PRs: 2189, Total Issues: 164, Contributed to (last year): 7</desc>
+        <desc id="descId">Total Stars Earned: 24, All-time Contributions: 16535, Public Commits  : 3322, Total PRs: 2189, Total Issues: 164, Contributed to (last year): 7</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 64.51583194363081;
+        stroke-dashoffset: 64.50711297123466;
       }
     }
   
@@ -117,7 +117,7 @@
           rx="4.5"
           height="99%"
           stroke="#e4e2e2"
-          width="466"
+          width="338.5666646957397"
           fill="#0D1117"
           stroke-opacity="1"
         />
@@ -143,18 +143,7 @@
           transform="translate(0, 55)"
         >
           
-    <g data-testid="rank-circle"
-          transform="translate(390.5, 60)">
-        <circle class="rank-circle-rim" cx="-10" cy="8" r="40" />
-        <circle class="rank-circle" cx="-10" cy="8" r="40" />
-        <g class="rank-text">
-          
-        <text x="-5" y="3" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" data-testid="level-rank-icon">
-          A-
-        </text>
-      
-        </g>
-      </g>
+    
     <svg x="0" y="0">
       <g transform="translate(0, 0)">
     <g class="stagger" style="animation-delay: 450ms" transform="translate(25, 0)">

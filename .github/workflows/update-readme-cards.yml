@@ -37,6 +37,7 @@ jobs:
             --data-urlencode 'include_contributions=true' \
             --data-urlencode 'show=contributions' \
             --data-urlencode 'show_icons=true' \
+            --data-urlencode 'hide_rank=true' \
             --data-urlencode 'theme=github_dark' \
             --output profile/stats.svg.tmp
           python3 - <<'PYTHON'
