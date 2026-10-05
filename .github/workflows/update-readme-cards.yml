@@ -25,13 +25,32 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Generate GitHub stats
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: stats
-          options: username=${{ github.repository_owner }}&include_all_commits=true&show_icons=true&theme=github_dark
-          path: profile/stats.svg
-          token: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
-          fail_on_error: true
+        env:
+          PROFILE_USERNAME: ${{ github.repository_owner }}
+        # The repository token limits commit search to this repository.
+        # Use the public renderer for the account's all-time public commit count.
+        run: |
+          curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 45 \
+            --get 'https://github-stats-extended.vercel.app/api' \
+            --data-urlencode "username=$PROFILE_USERNAME" \
+            --data-urlencode 'include_all_commits=true' \
+            --data-urlencode 'show_icons=true' \
+            --data-urlencode 'theme=github_dark' \
+            --output profile/stats.svg.tmp
+          python3 - <<'PYTHON'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          card = Path("profile/stats.svg.tmp")
+          root = ET.fromstring(card.read_text())
+          commits = next((node for node in root.iter()
+                          if node.get("data-testid") == "commits"), None)
+          # Error cards can also return HTTP 200. Preserve the published card on failure.
+          if commits is None or not commits.text or commits.text.strip() == "0":
+              raise SystemExit("Stats renderer returned an error card or zero commits")
+          print(f"All-time public commits: {commits.text.strip()}")
+          card.replace("profile/stats.svg")
+          PYTHON
 
       - name: Generate top languages
         uses: stats-organization/github-readme-stats-action@v2
