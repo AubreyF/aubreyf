@@ -28,12 +28,14 @@ jobs:
         env:
           PROFILE_USERNAME: ${{ github.repository_owner }}
         # The repository token limits commit search to this repository.
-        # Use the public renderer for the account's all-time public commit count.
+        # The public renderer also includes anonymous private contribution counts.
         run: |
           curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 45 \
             --get 'https://github-stats-extended.vercel.app/api' \
             --data-urlencode "username=$PROFILE_USERNAME" \
             --data-urlencode 'include_all_commits=true' \
+            --data-urlencode 'include_contributions=true' \
+            --data-urlencode 'show=contributions' \
             --data-urlencode 'show_icons=true' \
             --data-urlencode 'theme=github_dark' \
             --output profile/stats.svg.tmp
@@ -42,13 +44,19 @@ jobs:
           import xml.etree.ElementTree as ET
 
           card = Path("profile/stats.svg.tmp")
-          root = ET.fromstring(card.read_text())
-          commits = next((node for node in root.iter()
-                          if node.get("data-testid") == "commits"), None)
+          svg = card.read_text()
+          root = ET.fromstring(svg)
           # Error cards can also return HTTP 200. Preserve the published card on failure.
-          if commits is None or not commits.text or commits.text.strip() == "0":
-              raise SystemExit("Stats renderer returned an error card or zero commits")
-          print(f"All-time public commits: {commits.text.strip()}")
+          for metric in ("commits", "contributions"):
+              node = next((node for node in root.iter()
+                           if node.get("data-testid") == metric), None)
+              if node is None or not node.text or node.text.strip() == "0":
+                  raise SystemExit(f"Stats renderer returned missing or zero {metric}")
+              print(f"All-time {metric}: {node.text.strip()}")
+          # Distinguish public commits from contributions that include private activity.
+          svg = svg.replace("Total Commits", "Public Commits")
+          svg = svg.replace("Total Contributions", "All-time Contributions")
+          card.write_text(svg)
           card.replace("profile/stats.svg")
           PYTHON
 
