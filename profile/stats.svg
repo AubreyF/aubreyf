@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Aubrey Falconer&#39;s GitHub Stats, Rank: A-</title>
-        <desc id="descId">Total Stars Earned: 25, All-time Contributions: 16725, Public Commits  : 3387, Total PRs: 2255, Total Issues: 171, Contributed to (last year): 7</desc>
+        <desc id="descId">Total Stars Earned: 10, All-time Contributions: 16798, Public Commits  : 3393, Total PRs: 2275, Total Issues: 207, Contributed to (last year): 10</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 63.382296304197055;
+        stroke-dashoffset: 77.26649665242711;
       }
     }
   
@@ -158,7 +158,7 @@
         x="224.01"
         y="12.5"
         data-testid="stars"
-      >25</text>
+      >10</text>
     </g>
   </g><g transform="translate(0, 25)">
     <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
@@ -173,7 +173,7 @@
         x="224.01"
         y="12.5"
         data-testid="contributions"
-      >16.7k</text>
+      >16.8k</text>
     </g>
   </g><g transform="translate(0, 50)">
     <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
@@ -218,7 +218,7 @@
         x="224.01"
         y="12.5"
         data-testid="issues"
-      >171</text>
+      >207</text>
     </g>
   </g><g transform="translate(0, 125)">
     <g class="stagger" style="animation-delay: 1200ms" transform="translate(25, 0)">
@@ -233,7 +233,7 @@
         x="224.01"
         y="12.5"
         data-testid="contribs"
-      >7</text>
+      >10</text>
     </g>
   </g>
     </svg>
